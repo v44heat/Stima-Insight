@@ -1,0 +1,13 @@
+.env
+*.pyc
+__pycache__/
+venv/
+.venv/
+node_modules/
+dist/
+backend/trained_models/*.joblib
+backend/trained_models/*.json
+backend/instance/
+.pytest_cache/
+*.sqlite
+.ipynb_checkpoints/

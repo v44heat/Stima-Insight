@@ -1,0 +1,92 @@
+{
+  "trained_at": "2026-10-05T14:45:46.188763+00:00",
+  "household_id": 1,
+  "selected_model": "Random Forest",
+  "selection_metric": "mae",
+  "total_records": 4320,
+  "train_test_split": {
+    "train_fraction": 0.8,
+    "test_start": "2026-05-25T00:00:00+03:00",
+    "evaluation": "day-ahead rolling origin (24 h horizon)"
+  },
+  "metrics": {
+    "Random Forest": {
+      "mae": 0.04405458257514643,
+      "rmse": 0.11759244569493758,
+      "mape": 14.561628169725505,
+      "n_test": 864,
+      "n_mape_excluded": 0,
+      "training_time": 1.0309380999997302,
+      "training_records": 3288
+    },
+    "SARIMA": {
+      "mae": 0.04819750094919009,
+      "rmse": 0.1176989205526655,
+      "mape": 16.229740466799793,
+      "n_test": 864,
+      "n_mape_excluded": 0,
+      "training_time": 31.35398609999993,
+      "training_records": 1440
+    }
+  },
+  "features": [
+    "hour",
+    "day_of_week",
+    "day_of_month",
+    "month",
+    "week_of_year",
+    "is_weekend",
+    "is_holiday",
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_24",
+    "lag_48",
+    "lag_168",
+    "rolling_mean_3",
+    "rolling_mean_6",
+    "rolling_mean_24",
+    "rolling_std_24",
+    "temperature",
+    "humidity"
+  ],
+  "feature_purpose": {
+    "hour": "Captures the daily cycle (night low, morning and evening peaks).",
+    "day_of_week": "Captures weekday/weekend routines.",
+    "day_of_month": "Captures monthly effects such as pay-day purchasing patterns.",
+    "month": "Captures seasonal variation.",
+    "week_of_year": "Captures longer seasonal trends.",
+    "is_weekend": "Binary weekday/weekend flag.",
+    "is_holiday": "Kenyan public holiday flag (fixed dates, Good Friday, Easter Monday).",
+    "lag_1": "Consumption one step ago: short-term momentum.",
+    "lag_2": "Consumption two steps ago.",
+    "lag_3": "Consumption three steps ago.",
+    "lag_24": "Same hour yesterday (daily seasonality).",
+    "lag_48": "Same hour two days ago.",
+    "lag_168": "Same hour last week (weekly seasonality).",
+    "rolling_mean_3": "Average of the previous 3 steps: recent level.",
+    "rolling_mean_6": "Average of the previous 6 steps.",
+    "rolling_mean_24": "Average of the previous 24 steps: daily level.",
+    "rolling_std_24": "Variability over the previous 24 steps.",
+    "temperature": "Weather effect on usage (only when supplied).",
+    "humidity": "Weather effect on usage (only when supplied)."
+  },
+  "data_sources": {
+    "demo": 4320
+  },
+  "total_training_seconds": 82.66,
+  "thresholds": {
+    "low": 10.0,
+    "medium": 20.0,
+    "high": 35.0,
+    "critical": 50.0,
+    "min_abs_kwh": 0.25,
+    "contamination": 0.02,
+    "night_start": 0,
+    "night_end": 4,
+    "alert_min_severity": "MEDIUM",
+    "pattern_change_pct": 30.0
+  },
+  "random_seed": 42,
+  "notes": "Anomaly 'expected' values come from blocked cross-fitted Random Forest predictions."
+}
