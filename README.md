@@ -19,39 +19,7 @@ You need exactly **three programs**. Nothing else.
 | **PostgreSQL** | **14 to 17** (tested on 16) | The database |
 ---
 
-## 2. Install the three programs (Windows)
-
-### 2.1 Python
-
-1. Go to <https://www.python.org/downloads/windows/> and download the **Python 3.12** installer (64-bit).
-2. Run it. On the very first screen, **tick "Add python.exe to PATH"**, then click *Install Now*.
-3. Open a new Command Prompt and check:
-
-   ```bat
-   python --version
-   ```
-
-   You should see `Python 3.12.x` (or 3.11.x). If Windows says `python is not recognized`, you missed the PATH tick: run the installer again, choose *Modify*, and tick it, or use `py -3.12` in place of `python` in every command below.
-
-### 2.2 Node.js
-
-1. Go to <https://nodejs.org> and download the **LTS** version.
-2. Run the installer and accept the defaults.
-3. Open a **new** Command Prompt and check:
-
-   ```bat
-   node --version
-   npm --version
-   ```
-
-### 2.3 PostgreSQL
-
-1. Go to <https://www.postgresql.org/download/windows/> and download the installer (version 16 is fine).
-2. Run it and keep the default components (PostgreSQL Server, pgAdmin 4, Command Line Tools). You can untick *Stack Builder*; you do not need it.
-3. When it asks for a **password for the `postgres` user, choose one and write it down.** You will need it in step 3.3. Keep the default port **5432**.
-4. Finish the installer. PostgreSQL starts automatically with Windows.
-
-### 2.4 Create the empty database
+### 2 Create the empty database
 
 The app needs an empty database called `electricity_forecasting`. The easiest way is **pgAdmin**:
 
@@ -65,9 +33,6 @@ Prefer the command line? Open **SQL Shell (psql)** from the Start menu, press En
 CREATE DATABASE electricity_forecasting;
 ```
 
-You do not create any tables yourself. The app does that.
-
----
 
 ## 3. Set up the project
 
