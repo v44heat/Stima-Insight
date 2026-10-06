@@ -17,23 +17,6 @@ You need exactly **three programs**. Nothing else.
 | **Python** | **3.11 or 3.12** | Runs the backend and the machine-learning code |
 | **Node.js** | **LTS (20 or 22)** | Runs the React frontend |
 | **PostgreSQL** | **14 to 17** (tested on 16) | The database |
-
-You also need a normal browser (Chrome or Edge). A code editor such as VS Code is handy but optional.
-
-### What you do NOT need
-
-Do not install any of these. They are not used, and some of them cause confusing problems:
-
-- **Docker**: not needed. Everything runs directly on Windows.
-- **Supabase**, **MongoDB**, **MySQL / XAMPP**: not used. The database is PostgreSQL only.
-- **Anaconda / Miniconda**: not needed. Use the regular Python from python.org.
-- **Jupyter**: not needed to run the app.
-- **TensorFlow, PyTorch, a GPU**: not used. The models are Random Forest and SARIMA, which run fine on any laptop.
-- **Visual Studio Build Tools / a C++ compiler**: not needed. Everything installs as ready-made packages.
-- **Redis, Celery, Nginx**: not used.
-- **Any paid service, API key or Kenya Power account**: not needed. The app works fully offline on your own computer.
-- **Python 3.13 or newer**: do *not* use it. The pinned library versions do not support it yet, and `pip install` will fail.
-
 ---
 
 ## 2. Install the three programs (Windows)
