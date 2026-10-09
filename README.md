@@ -21,7 +21,7 @@ You need exactly **three programs**. Nothing else.
 
 ### 2 Create the empty database
 
-The app needs an empty database called `electricity_forecasting`. The easiest way is **pgAdmin**:
+The app needs an empty database called `Electricity_forecasting`. The easiest way is **pgAdmin**:
 
 1. Open **pgAdmin 4** from the Start menu and enter your `postgres` password when asked.
 2. In the left panel expand *Servers*, then *PostgreSQL 16*. Right-click **Databases**, choose **Create**, then **Database…**
